@@ -7,7 +7,9 @@ var params=[
 incomeHandlers=[				//обработать все обложки
 	handleFullList
 ], 
-fullList=''
+fullList='',
+scrn_width = 0, scrn_height = 0
+
 
 document.onreadystatechange = function () {
     if (document.readyState == "complete") {
@@ -15,8 +17,14 @@ document.onreadystatechange = function () {
     }
 }
 function init(){
-	load(0)
+	initScreenSize()
+	blackScreen.addEventListener('click', closePopup)
 }
+function initScreenSize(){
+	scrn_width = screen.width
+	scrn_height = screen.height
+}
+
 function load(param){
 	//loading.setAttribute("class","visible");
 	
@@ -46,11 +54,18 @@ function handleFullList(income){
 		var resultStr = '<div class="cover_block f_l"><div class="cb_image" data="'+rawCover.id+'" style="background:url(&quot;'+rawCover.image+ '&quot;); background-size:100%"></div><div class="cb_buttons"><div class="cd_but f_l">л</div><div class="cd_but f_l">ш</div><div class="cd_but f_l">к</div></div></div>'
 		return resultStr
 	}
-	for(var i=0; i<document.getElementsByClassName('cb_image');i++){
+	for(var i=0; i<document.getElementsByClassName('cb_image').length;i++){
 		document.getElementsByClassName('cb_image')[i].addEventListener('click', popupFullCover)
 	}
 }
 function popupFullCover(e){
-	var cover_id = e.target.getAttribute('data');
+	blackScreen.setAttribute('class', 'visible')
+	var cover_id = e.target.getAttribute('data')
 	fullPopupCover.setAttribute('class', 'fpc_visible')
+	fullPopupCover.style.top = scrn_height/2 - 250 +'px'
+	fullPopupCover.style.left = scrn_width/2 - 250 +'px'
+}
+function closePopup(){
+	fullPopupCover.setAttribute('class', 'fpc_hidden')
+	blackScreen.setAttribute('class', 'hidden')
 }
