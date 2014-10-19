@@ -58,6 +58,14 @@ class NotebookSerializer(serializers.HyperlinkedModelSerializer):
         model = Notebook
         fields = ['id', 'cover', 'pages']
 
+    def from_native(self, data, files):
+        if isinstance(data, int) or isinstance(data, basestring):
+            try:
+                return self.Meta.model.objects.get(id=data)
+            except self.Meta.model.DoesNotExist as e:
+                pass
+        return super(NotebookSerializer, self).from_native(data, files)
+
 
 class OrderItemSerializer(serializers.HyperlinkedModelSerializer):
     notebook = NotebookSerializer(source='notebook', required=True)
@@ -65,6 +73,14 @@ class OrderItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = OrderItem
         fields = ['id', 'notebook', 'quantity']
+
+    def from_native(self, data, files):
+        if isinstance(data, int) or isinstance(data, basestring):
+            try:
+                return self.Meta.model.objects.get(id=data)
+            except self.Meta.model.DoesNotExist as e:
+                pass
+        return super(OrderItemSerializer, self).from_native(data, files)
 
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
