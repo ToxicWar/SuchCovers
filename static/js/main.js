@@ -71,7 +71,7 @@ function popupFullCover(e){
 			fpc_cover_img.style.background = 'url("'+fullList.results[i].image+'")'
 			fpc_cover_img.style.backgroundSize = '100%'
 			fpc_cover_name.innerHTML = fullList.results[i].title
-			fpc_cover_description.innerHTML = fullList.results[i].pages
+			//fpc_cover_description.innerHTML = fullList.results[i].pages
 		}
 	}
 	fpc_cover_img.style.backgroundSize = '100%'
