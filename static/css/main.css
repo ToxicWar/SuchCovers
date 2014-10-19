@@ -23,13 +23,13 @@ body{
 }
 .sc_button{
 	box-sizing: border-box;
-	background: green;
+	background: rgb(38, 169, 89);
 	border-radius: 5px;
 	text-align: center;
 	font-size: 16px;
 	text-transform: uppercase;
 	margin-top: 10px;
-	margin-left: 67%;
+	margin-left: 65%;
 }
 .sc_button a{
 	text-decoration: none;
@@ -50,7 +50,7 @@ body{
 }
 .content_inner{
 	display: inline-block;
-	max-width: 90%;
+	max-width: 80%;
 }
 .content_inner *{
 	text-align: left;
