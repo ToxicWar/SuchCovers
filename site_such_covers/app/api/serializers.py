@@ -8,10 +8,11 @@ import base64
 
 class CoverSerializer(serializers.HyperlinkedModelSerializer):
     image = serializers.SerializerMethodField('get_image')
+    tags = serializers.SerializerMethodField('get_tags')
 
     class Meta:
         model = Cover
-        fields = ['id', 'title', 'image']
+        fields = ['id', 'title', 'image', 'tags', 'likes', 'is_display']
 
     def get_image(self, obj):
         if self.init_data and self.init_data.has_key('image'):
@@ -28,6 +29,11 @@ class CoverSerializer(serializers.HyperlinkedModelSerializer):
 
         if obj.image:
             return '/media/{}'.format(obj.image)
+        return ''
+
+    def get_tags(self, obj):
+        if obj.tags:
+            return [tag.name for tag in obj.tags.all()]
         return ''
 
 

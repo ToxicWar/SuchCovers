@@ -15,7 +15,7 @@ class Cover(models.Model):
     image = models.ImageField('Image', upload_to=upload_to)
     tags = TaggableManager()
     likes = models.IntegerField('Likes', default=0)
-    id_display = models.BooleanField('Is display', default=True)
+    is_display = models.BooleanField('Is display', default=True)
 
     class Meta:
         verbose_name = 'Cover'

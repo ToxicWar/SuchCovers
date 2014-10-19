@@ -9,6 +9,10 @@ class CoverViewSet(viewsets.ModelViewSet):
     model = Cover
     serializer_class = CoverSerializer
 
+    def get_queryset(self):
+        qs = super(CoverViewSet, self).get_queryset()
+        return qs.filter(is_display=True)
+
 
 class NotebookViewSet(viewsets.ModelViewSet):
     model = Notebook
