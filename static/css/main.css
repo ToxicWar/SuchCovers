@@ -14,20 +14,22 @@ body{
 	font-weight: 200;
 	margin-left: 10%;
 }
-.sc_button{
-	box-sizing: border-box;
+.sc_b_head{
+	width: 300px;
+	margin-right: 10%;
 	height: 70px;
-	margin-top: 10px;
 	margin-bottom: 10px;
 	height: inherit;
+}
+.sc_button{
+	box-sizing: border-box;
 	background: green;
 	border-radius: 5px;
-	margin-left: 80%;
 	text-align: center;
 	font-size: 16px;
 	text-transform: uppercase;
-	margin-left: 68%;
-	margin-right: 10%;
+	margin-top: 10px;
+	margin-left: 67%;
 }
 .sc_button a{
 	text-decoration: none;
@@ -127,6 +129,23 @@ body{
 .fpc_hidden{
 	transform: scale(0,0);
 	visibility: hidden;
+}
+.fpc_cover_img{
+	width: 333px;
+	height: inherit;
+	background-size: 100%;
+}
+.fpc_cover_name{
+	font-size: 20px;
+	font-weight: bold;
+	color: rgb(100, 100, 100);
+	padding: 20px;
+}
+.sc_b_popup{
+	margin: 0;
+	height: 40px;
+	width: 125px;
+	line-height: 40px;
 }
 /*                                footer              */
 .footer{
