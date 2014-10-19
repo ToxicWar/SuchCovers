@@ -23,7 +23,6 @@ body{
 	display: block;
 	float: left;
 	color: rgb(37, 92, 131);
-	margin-right: 5px;
 }
 .selectors .selected{
 	font-weight: bold;
@@ -32,6 +31,7 @@ body{
 	border: none;
 	font-size: 16px;
 	color: rgb(37, 92, 131);
+    background-color: transparent;
 }
 .selectors select:active{
 	border: none;
