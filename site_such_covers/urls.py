@@ -7,6 +7,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'', include('site_such_covers.app.urls')),
+    url(r'^api/', include('site_such_covers.app.api.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

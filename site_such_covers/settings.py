@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'site_such_covers.app',
+    'site_such_covers.app.api',
+
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -91,3 +94,8 @@ MEDIA_ROOT = BASE_DIR + '/static/media/'
 TEMPLATE_DIRS = (
     BASE_DIR + '/templates/'
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
+    'PAGINATE_BY': 10
+}
