@@ -17,6 +17,7 @@ document.onreadystatechange = function () {
     }
 }
 function init(){
+	load(0)
 	initScreenSize()
 	blackScreen.addEventListener('click', closePopup)
 }
