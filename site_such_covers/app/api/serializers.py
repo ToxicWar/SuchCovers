@@ -1,7 +1,7 @@
 # coding: utf-8
 from __future__ import unicode_literals
 from rest_framework import serializers
-from site_such_covers.app.models import Cover, Notebook
+from site_such_covers.app.models import Cover, Notebook, OrderItem, Order
 from django.core.files.base import ContentFile
 import base64
 
@@ -11,7 +11,7 @@ class CoverSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Cover
-        fields = ['title', 'image']
+        fields = ['id', 'title', 'image']
 
     def get_image(self, obj):
         if self.init_data and self.init_data.has_key('image'):
@@ -36,4 +36,20 @@ class NotebookSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Notebook
-        fields = ['cover', 'pages']
+        fields = ['id', 'cover', 'pages']
+
+
+class OrderItemSerializer(serializers.HyperlinkedModelSerializer):
+    notebook = NotebookSerializer(source='notebook', required=True)
+
+    class Meta:
+        model = OrderItem
+        fields = ['id', 'notebook', 'quantity']
+
+
+class OrderSerializer(serializers.HyperlinkedModelSerializer):
+    order_items = OrderItemSerializer(source='order_items', many=True)
+
+    class Meta:
+        model = Order
+        fields = ['id', 'fio', 'email', 'country', 'city', 'address', 'order_items']

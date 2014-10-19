@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'site_such_covers.app.api',
 
     'rest_framework',
+    'taggit',
 )
 
 MIDDLEWARE_CLASSES = (
