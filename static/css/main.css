@@ -1,18 +1,40 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
+	background: url('../img/bg.jpg');
 }
 /*                                header              */
 .header{
 	height: 80px;
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid rgb(190, 190, 190);
 	line-height: 80px;
 	padding-bottom: 10px;
+	padding-top: 10px;
+	background: white;
 }
 .logo{
 	font-size: 40px;
 	font-weight: 200;
 	margin-left: 10%;
+}
+.selectors span{
+	padding: 10px;
+	padding-top: 9px;
+	display: block;
+	float: left;
+	color: rgb(37, 92, 131);
+}
+.selectors .selected{
+	font-weight: bold;
+}
+.selectors select{
+	border: none;
+	font-size: 16px;
+	color: rgb(37, 92, 131);
+}
+.selectors select:active{
+	border: none;
+	font-size: 16px;
 }
 .sc_b_head{
 	width: 300px;
@@ -28,7 +50,6 @@ body{
 	text-align: center;
 	font-size: 16px;
 	text-transform: uppercase;
-	margin-top: 10px;
 	margin-left: 65%;
 }
 .sc_button a{
