@@ -1,0 +1,101 @@
+/*                                header              */
+.header{
+	height: 80px;
+	border-bottom: 1px solid grey;
+}
+/*                                content             */
+.content{
+	min-height: 95%;
+	text-align: center;
+}
+.content_inner{
+	display: inline-block;
+}
+.content_inner *{
+	text-align: left;
+}
+/*                                coverblock             */
+.cover_block{
+	width: 120px;
+	height: 180px;
+	border: 1px solid grey;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	overflow: hidden;
+}
+.cb_image{
+	width: inherit;
+	height: inherit;
+
+}
+
+.cb_buttons{
+	height: 30px;
+	border-top: 1px solid grey;
+	position: absolute;
+	width: inherit;
+	bottom: 0;
+	transition: transform 0.1s;
+	transition: transform 0.1s;
+	transition: transform 0.1s;
+	transition: transform 0.1s;
+	
+	-moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px);
+}
+.cover_block:hover .cb_buttons{
+	-moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+	bottom: 0;
+}
+
+.cd_but{
+	width: 33%;
+	height: inherit;
+	text-align: center;
+}
+#fullPopupCover{
+	width: 500px;
+	height: 500px;
+	position: fixed;
+	top: 50px;
+	right: 50px;
+	border: 1px solid grey;
+	background: white;
+	transition: transform .2s;
+}
+.fpc_visible{
+	transform: scale(1,1);
+	visibility: visible;
+}
+.fpc_hidden{
+	transform: scale(0,0);
+	visibility: hidden;
+}
+/*                                footer              */
+.footer{
+	min-width: 5%;
+}
+/*                                                     utils */
+.f_l{
+	float:left;
+}
+.f_r{
+	float:right;
+}
+.hidden{
+	display:none;
+}
+.visible{
+	display:block;
+}
+.c_pointer{
+	cursor: pointer;
+}
