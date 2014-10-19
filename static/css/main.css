@@ -130,12 +130,12 @@ body{
 	transform: scale(0,0);
 	visibility: hidden;
 }
-.fpc_cover_img{
+#fpc_cover_img{
 	width: 333px;
 	height: inherit;
 	background-size: 100%;
 }
-.fpc_cover_name{
+#fpc_cover_name{
 	font-size: 20px;
 	font-weight: bold;
 	color: rgb(100, 100, 100);
