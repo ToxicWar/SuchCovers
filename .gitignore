@@ -6,3 +6,4 @@
 static/media/*
 .coverage
 db.sqlite3
+docs/build
