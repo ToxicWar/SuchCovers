@@ -1,8 +1,8 @@
 # coding: utf-8
 from __future__ import unicode_literals
+from django.core.files.base import ContentFile
 from rest_framework import serializers
 from site_such_covers.app.models import Cover, Notebook, OrderItem, Order
-from django.core.files.base import ContentFile
 import base64
 
 
@@ -32,9 +32,23 @@ class CoverSerializer(serializers.HyperlinkedModelSerializer):
         return ''
 
     def get_tags(self, obj):
+        if self.init_data and self.init_data.has_key('tags'):
+            tags = self.init_data['tags']
+            tags = [tag.strip() for tag in tags.split(',')]
+            for tag in tags:
+                obj.tags.add(tag)
+
         if obj.tags:
             return [tag.name for tag in obj.tags.all()]
         return ''
+
+    def from_native(self, data, files):
+        if isinstance(data, int) or isinstance(data, basestring):
+            try:
+                return self.Meta.model.objects.get(id=data)
+            except self.Meta.model.DoesNotExist as e:
+                pass
+        return super(CoverSerializer, self).from_native(data, files)
 
 
 class NotebookSerializer(serializers.HyperlinkedModelSerializer):
