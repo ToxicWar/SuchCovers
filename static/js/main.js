@@ -21,6 +21,7 @@ function init(){
 	initScreenSize()
 	blackScreen.addEventListener('click', closePopup)
 }
+document.onresize = initScreenSize
 function initScreenSize(){
 	scrn_width = screen.width
 	scrn_height = screen.height
@@ -65,6 +66,16 @@ function popupFullCover(e){
 	fullPopupCover.setAttribute('class', 'fpc_visible')
 	fullPopupCover.style.top = scrn_height/2 - 250 +'px'
 	fullPopupCover.style.left = scrn_width/2 - 250 +'px'
+	for (var i=0; i<fullList.results.length; i++){
+		if(fullList.results[i].id==cover_id){
+			fpc_cover_img.style.background = 'url("'+fullList.results[i].image+'")'
+			fpc_cover_name.innerHTML = fullList.results[i].title
+			fpc_cover_decscription.innerHTML = fullList.results[i].pages
+		}
+	}
+	fpc_cover_img.style.backgroundSize = '100%'
+	
+
 }
 function closePopup(){
 	fullPopupCover.setAttribute('class', 'fpc_hidden')

@@ -1,16 +1,54 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
 /*                                header              */
 .header{
 	height: 80px;
 	border-bottom: 1px solid grey;
+	line-height: 80px;
+	padding-bottom: 10px;
+}
+.logo{
+	font-size: 40px;
+	font-weight: 200;
+	margin-left: 10%;
+}
+.sc_button{
+	box-sizing: border-box;
+	height: 70px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: inherit;
+	background: green;
+	border-radius: 5px;
+	margin-left: 80%;
+	text-align: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-left: 68%;
+	margin-right: 10%;
+}
+.sc_button a{
+	text-decoration: none;
+	color: white;
+	display: block;
+	height: 100%;
+}
+.sc_button a:visited{
+	text-decoration: none;
+	color: white;
 }
 /*                                content             */
 .content{
 	min-height: 95%;
 	text-align: center;
+	margin: 0 auto;
 	margin-top: 50px;
 }
 .content_inner{
 	display: inline-block;
+	max-width: 90%;
 }
 .content_inner *{
 	text-align: left;
@@ -33,6 +71,7 @@
 
 .cb_buttons{
 	height: 30px;
+	line-height: 30px;
 	border-top: 1px solid grey;
 	background: white;
 	position: absolute;
