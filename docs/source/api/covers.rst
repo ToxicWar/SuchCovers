@@ -21,9 +21,11 @@
         Content-Type: application/json
 
         {
+            "title": "Test",
+            "tags": "admin, test"
         }
 
-    :status 201: Covers loaded
+    :status 201: Cover create
     :status 400: Invalid data
 
 
@@ -43,6 +45,32 @@
         Content-Type: application/json
 
         {
+            "count": 2,
+            "next": null,
+            "previous": null,
+            "results": [
+                {
+                    "id": 1,
+                    "title": "Title",
+                    "image": "/media/covers/KABOOM_Adventure_Time_v3_OGN_2.jpg",
+                    "tags": [
+                        "test",
+                        "lol"
+                    ],
+                    "likes": 10,
+                    "is_display": true
+                },
+                {
+                    "id": 2,
+                    "title": "Yay",
+                    "image": "/media/covers/6eSxs6p.png",
+                    "tags": [
+                        "muchtached"
+                    ],
+                    "likes": 0,
+                    "is_display": true
+                }
+            ]
         }
 
     :status 201: Covers created
@@ -65,6 +93,15 @@
         Content-Type: application/json
 
         {
+            "id": 1,
+            "title": "Title",
+            "image": "/media/covers/KABOOM_Adventure_Time_v3_OGN_2.jpg",
+            "tags": [
+                "test",
+                "lol"
+            ],
+            "likes": 10,
+            "is_display": true
         }
 
     :status 201: Cover loaded
